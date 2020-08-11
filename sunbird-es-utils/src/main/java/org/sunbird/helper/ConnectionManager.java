@@ -276,7 +276,7 @@ public class ConnectionManager {
       try {
         restClient.close();
       } catch (IOException e) {
-        e.printStackTrace();
+      //  e.printStackTrace();
         ProjectLogger.log(
             "ConnectionManager:ResourceCleanUp error occured during restclient resource cleanup "
                 + e,
