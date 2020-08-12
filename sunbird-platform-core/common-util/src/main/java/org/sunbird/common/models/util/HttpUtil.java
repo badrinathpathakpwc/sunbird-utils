@@ -315,7 +315,7 @@ public class HttpUtil {
       }
       if (params.length() > 0) {
         writer = new OutputStreamWriter(httpURLConnection.getOutputStream(), StandardCharsets.UTF_8);
-        writer.write(params);
+        writer.write(params.toString());
         writer.flush();
       }
     } catch (IOException e) {
