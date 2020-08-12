@@ -35,7 +35,7 @@ public class JsonUtil {
       result = mapper.convertValue(node, clazz);
     } catch (IOException e) {
       logger.error("JsonUtil:getAsObject error occured : " + e);
-      e.printStackTrace();
+     // e.printStackTrace();
     }
     return result;
   }
