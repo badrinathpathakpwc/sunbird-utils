@@ -313,9 +313,11 @@ public class HttpUtil {
       if (headers != null && headers.size() > 0) {
         setHeaders(httpURLConnection, headers);
       }
-      writer = new OutputStreamWriter(httpURLConnection.getOutputStream(), StandardCharsets.UTF_8);
-      writer.write(params);
-      writer.flush();
+      if (params.length() > 0) {
+        writer = new OutputStreamWriter(httpURLConnection.getOutputStream(), StandardCharsets.UTF_8);
+        writer.write(params);
+        writer.flush();
+      }
     } catch (IOException e) {
       ProjectLogger.log("HttpUtil:postRequest call failure with error = " + e.getMessage(), e);
       throw e;
